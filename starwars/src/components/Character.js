@@ -9,16 +9,16 @@ export default function Character(props) {
   return (
     <div className="charCard">
     <div className="charInfo">
-      <h3>{props.name}</h3>
+      <h3>{props.chars.name}</h3>
       <p>
-        <strong>Height:</strong> {props.height}
+        <strong>Height:</strong> {props.chars.height}
       </p>
       <p>
-        <strong>Gender:</strong> {props.gender}
+        <strong>Gender:</strong> {props.chars.gender}
       </p>
       <p>
         <strong>Hair Color:</strong>{' '}
-        {props.hair_color}
+        {props.chars.hair_color}
       </p>
     </div>
   </div>

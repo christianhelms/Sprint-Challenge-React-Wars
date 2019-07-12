@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
 import styled from 'styled-components'
 import axios from "axios"
 
@@ -20,9 +19,9 @@ const App = () => {
       .get(`https://swapi.co/api/people`)
       .then(chars => {
         console.log(chars);
-        setChar(chars.data);
+        setChar(chars.data.results);
       })
-      .catch(err => console.log("OH SNAP SON! YOU DONE BROKE IT!"));
+      .catch(err => console.log("YOU DONE BROKE IT!"));
   };
 
   useEffect(() => {
@@ -30,15 +29,22 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <Container>
       <Header>React Wars</Header>
       <StarwarsCharacters chars={chars}/>
-    </div>
+    </Container>
   );
 }
 
 const Header = styled.h1`
 font-size: 75px;
+`
+
+const Container = styled.div`
+display: flex;
+flex-flow: column wrap;
+align-items: center
+justify-content: center;
 `
 
 export default App;

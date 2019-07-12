@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import Character from "./Character";
+import styled from 'styled-components'
 
 function StarwarsCharacters(props) {
-  const [characters] = useState([props.chars]);
-  console.log(characters);
 
   return (
-    <div>
-      {characters.map(chars => (
+    <Card>
+      {props.chars.map(chars => (
         <Character chars={chars} />
       ))}
-    </div>
+    </Card>
   );
 }
+
+const Card = styled.div`
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+background-color: white;
+max-width: 30%;
+width: 30%;
+text-align: center;
+`
 
 export default StarwarsCharacters;
